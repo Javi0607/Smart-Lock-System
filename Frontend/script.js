@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeButton = document.getElementById('closeButton');
     const contractStatus = document.getElementById('contractStatus');
 
-    const ESP32_IP = "http://192.168.1.105"; // Cambia esto por la IP de tu ESP32
+    const ESP32_IP = "http://your-ip"; // Cambia esto por la IP de tu ESP32
 
     // Conexión con la red Ethereum (MetaMask)
     if (typeof window.ethereum !== 'undefined') {
         const provider = new ethers.providers.Web3Provider(window.ethereum); // Cambia "ropsten" por la red que estás utilizando
         const signer = provider.getSigner();
-        const contractAddress = "-";  // Reemplaza con la dirección de tu contrato desplegado
+        const contractAddress = "your-contract-direction";  // Reemplaza con la dirección de tu contrato desplegado
         const contractABI = [
             {
               "inputs": [],
