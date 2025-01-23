@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Lock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Smart Lock</h1>
+        <p id="status">Status: <span id="lockStatus">Close</span></p>
+        <button id="openButton">Open Lock</button>
+        <button id="closeButton">Close Lock</button>
+        <p id="contractStatus"></p> <!-- Para mostrar el estado de la interacción con el contrato -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.9/dist/ethers.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
