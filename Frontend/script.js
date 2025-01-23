@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof window.ethereum !== 'undefined') {
         const provider = new ethers.providers.Web3Provider(window.ethereum); // Cambia "ropsten" por la red que estás utilizando
         const signer = provider.getSigner();
-        const contractAddress = "0x036AC0B0bf1981B69e165a627F6c1eb903b603D6";  // Reemplaza con la dirección de tu contrato desplegado
+        const contractAddress = "-";  // Reemplaza con la dirección de tu contrato desplegado
         const contractABI = [
             {
               "inputs": [],
