@@ -1,0 +1,35 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.26;
+
+contract LockRegister {
+    // Usamos uint8 en lugar de string para optimizar el gas
+    enum ActionType { Open, Close }
+
+    // Variable para almacenar la dirección del administrador
+    address public admin;
+
+    // Evento que se emite cuando se registra una acción
+    event ActionRegistered(address indexed user, ActionType action, uint256 timestamp);
+
+    // Modificador para restringir el acceso al administrador
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Solo el administrador puede registrar acciones");
+        _;
+    }
+
+    // Constructor que establece al creador del contrato como administrador
+    constructor() {
+        admin = msg.sender;
+    }
+
+    // Función para registrar una acción, solo puede ser llamada por el administrador
+    function registerAction(ActionType _action) public onlyAdmin {
+        // Emitimos el evento sin almacenar el historial
+        emit ActionRegistered(msg.sender, _action, block.timestamp);
+    }
+
+    // Función para cambiar el administrador (opcional, si se desea cambiar el admin)
+    function changeAdmin(address newAdmin) public onlyAdmin {
+        admin = newAdmin;
+    }
+}
